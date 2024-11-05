@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Birthday, My Special Friend!</title>
+    <style>
+        /* Universal Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: #fff;
+            text-align: center;
+        }
+        body {
+            background: linear-gradient(120deg, #ff7e5f, #feb47b, #ff0066, #8a2387, #e94057, #f27121);
+            background-size: 300% 300%;
+            animation: gradient 15s ease infinite;
+            overflow-x: hidden;
+        }
+        /* Gradient Background Animation */
+        @keyframes gradient {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        /* Section Styles */
+        .section {
+            height: 100vh;
+            padding: 2em;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background: rgba(0, 0, 0, 0.6);
+        }
+        .section h1 {
+            font-size: 2.5em;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+        }
+        .section h2 {
+            font-size: 2em;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+        }
+        .section p {
+            font-size: 1.2em;
+            line-height: 1.5;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+            max-width: 600px;
+        }
+
+        /* Navigation and Input Buttons */
+        .nav-btn, .submit-btn {
+            margin-top: 20px;
+            padding: 10px 20px;
+            font-size: 1.2em;
+            background-color: #ff007f;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background-color 0.3s, transform 0.3s;
+        }
+        .nav-btn:hover, .submit-btn:hover {
+            background-color: #ff3399;
+            transform: scale(1.05);
+        }
+
+        /* Password Input Styles */
+        #password-section {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            height: 100vh;
+            justify-content: center;
+            background: rgba(0, 0, 0, 0.6);
+        }
+        #password-input {
+            padding: 10px;
+            font-size: 1.5em;
+            border: none;
+            border-radius: 5px;
+            margin-bottom: 15px;
+            outline: none;
+            color: black;
+        }
+        #error-msg {
+            color: #ff4d4d; 
+            display: none; 
+            font-size: 1.2em; 
+            margin-top: 15px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Password Page -->
+    <section id="password-section">
+        <h1>Answer the Question to Unlock the Surprise</h1>
+        <p>What is your answer for the special memory we share?</p>
+        <input type="text" id="password-input" placeholder="Type your answer here">
+        <button class="submit-btn" onclick="checkPassword()">Unlock</button>
+        <p id="error-msg">Incorrect answer. Try again!</p>
+    </section>
+
+    <!-- Page 1 -->
+    <section class="section" id="page1" style="display: none;">
+        <h1>Welcome to Our Special Memory Lane</h1>
+        <h2>Today We Celebrate Your Day! 🎉</h2>
+        <button class="nav-btn" onclick="navigateTo('page2')">Continue the Journey 💖</button>
+    </section>
+
+    <!-- Page 2 -->
+    <section class="section" id="page2" style="display: none;">
+        <h1>Happy Birthday, My Dear Friend! ❤</h1>
+        <p>🎉✨ Happy Birthday to My Dearest Friend! ✨🎉<br>
+It’s been exactly 1 year, 33 days, 2 hours, and 52 minutes since we first connected—a journey that began with a simple message on October 4, 2023. From October 5 onward, our conversations moved to my real account, and since then, each moment has only deepened my connection to you. 💬❤️
+No matter the misunderstandings or ups and downs along the way, our bond has only grown stronger and more meaningful. Nammude oru vazhiyil, ethrayum vishamangalum, chiriyum pakarnna samayam thanne! 🌦️💫 (Together, we’ve shared moments of laughter and sorrows alike!) My wish today is to always be by your side, through every high and low. 🌹Ninte jeevitham pranayamum santhoshavum niranja oru yathrayayirikkatte! 💕✨ (May your life be a journey filled with love and happiness.) Ningaludehridayam hridayathil ninnu njan sadhaagam snehathode undaavunnu! 💖 (From my heart, I promise to always be there with endless affection.)Ninte janmadinam sukhakaravum santhoshakaravum niranjirikatte! 🎂🌈 (May your birthday overflow with joy and peace!) I may not know how much I can give in the future, but I promise to always try to give you my best, to cherish and support you in every way I can. 🤗💯
+Thank you for being such a precious part of my life. Happy Birthday, once again! 🎂💖</p>
+        <button class="nav-btn" onclick="navigateTo('page3')">Next 💖</button>
+    </section>
+
+    <!-- Page 3 -->
+    <section class="section" id="page3" style="display: none;">
+        <h1>Ente jeevithathinte oru tharangamaayi nee,<br>
+            Enikku oru thalirkkayayi nalkiya sneham,<br>
+            Ente kannerin pakshikalum chiriyum nee ariyum,<br>
+            Manassil oru chiraku pidiyaayi ningalkkum. ❤</h1>
+        <p>You've been by my side through everything, and your friendship is one of the best gifts life has given me. Even though we met in such an unexpected way, you've become closer to my heart than I could have ever imagined. 💖</p>
+        <button class="nav-btn" onclick="navigateTo('page4')">Next 💖</button>
+    </section>
+
+    <!-- Page 4 -->
+    <section class="section" id="page4" style="display: none;">
+        <h2>Jeevitha yaathrayil nee endhum koodeyunde,
+            In this journey of life, you are always with me,<br>
+            Enikku deepamaayi vazhikaattunnu,
+            Guiding like a light, showing the way.<br>
+            Snehavum snehathinte oru aashrayamaayi,
+            With love and warmth that surrounds,<br>
+            Ente manasil uranjuvanna ninne saudhridham,
+            Your friendship etched deep in my heart,<br>
+            Marakkaan aakaathaoru sampath thannethaanu.
+            Is a treasure that I’ll cherish forever.🥂</h2>
+        <button class="nav-btn" onclick="navigateTo('page5')">The Last Message 💖</button>
+    </section>
+
+    <!-- Page 5 -->
+    <section class="section" id="page5" style="display: none;">
+        <h3>Our friendship is beyond words,</h3>
+        <p>You are my confidant, my laughter, and my best friend.<br>
+        Thank you for being a part of my life and filling it with warmth.<br>
+        Wishing you the happiest birthday and the best year ahead! ❤</p>
+        <h3>Happy Birthday, my one and only! 🥳💖</h3>
+    </section>
+
+    <script>
+        // Password Verification with Question
+        function checkPassword() {
+            const answer = document.getElementById('password-input').value.trim();
+            const errorMsg = document.getElementById('error-msg');
+
+            // Accepts "Right" as correct answer
+            if (answer === "Right") {
+                document.getElementById('password-section').style.display = 'none';
+                document.getElementById('page1').style.display = 'flex';
+            } else {
+                errorMsg.style.display = 'block';
+            }
+        }
+
+        // Navigation Function
+        function navigateTo(pageId) {
+            const sections = document.querySelectorAll('.section');
+            sections.forEach(section => section.style.display = 'none');
+            document.getElementById(pageId).style.display = 'flex';
+        }
+    </script>
+</body>
+</html>
